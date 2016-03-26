@@ -1,17 +1,17 @@
 
   	var bio = {
-  		"name" : "Preston Kresch",
-	  	"role" : "Web Developer",
-	  	"contacts" : {
-	  		"mobile" : "111-111-1111 ",
-	  		"email" : "ptkresch@gmail.com ",
-	  		"github" : "ptkresch ",
-	  		"location" : "Santa Barbara "
+  		name : "Preston Kresch",
+	  	role : "Web Developer",
+	  	contacts : {
+	  		mobile : "111-111-1111 ",
+	  		email : "ptkresch@gmail.com ",
+	  		github : "ptkresch ",
+	  		location : "Santa Barbara "
 	  	},
-	  	"welcomeMessage" : "ah suhh dude",
-  		"skills" : ["Tomato Thrower", "Monkey Comber", "Cereal Connoisseur"],
-  		"biopic" : "images/fry.jpg",
-  		"display" : function(){
+	  	welcomeMessage : "ah suhh dude",
+  		skills : ["Tomato Thrower", "Monkey Comber", "Cereal Connoisseur"],
+  		biopic : "images/fry.jpg",
+  		display : function(){
   			var formattedName = HTMLheaderName.replace("%data%", bio.name);
   			var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
 			var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
@@ -43,36 +43,36 @@
   	bio.display();
 
   	var education = {
-	  	"schools": [
+	  	schools: [
 	  	  	{
-	  	  		"name" : "UC Santa Barbara",
-	  	  		"location" : "Goleta, CA",
-	  	  		"degree" : "Bachelors of Science",
-	  	  		"major" : "Physics",
-	  	  		"dates" : "2013 - 2015",
-	  	  		"url" : "http://www.ucsb.edu/"
+	  	  		name : "UC Santa Barbara",
+	  	  		location : "Goleta, CA",
+	  	  		degree : "Bachelors of Science",
+	  	  		majors : ["Physics"],
+	  	  		dates : "2013 - 2015",
+	  	  		url : "http://www.ucsb.edu/"
 	  	  	},
 	  	  	
 	  	  	{
-	  	  		"name" : "Santa Barbara City College",
-	  	  		"location" : "Santa Barbara, CA",
-	  	  		"degree" : "Bachelors of Science",
-	  	  		"major" : "Physics",
-	  	  		"dates" : "2012 - 2013",
-	  	  		"url" : "http://www.sbcc.edu/"
+	  	  		name : "Santa Barbara City College",
+	  	  		location : "Santa Barbara, CA",
+	  	  		degree : "Bachelors of Science",
+	  	  		majors : ["Physics"],
+	  	  		dates : "2012 - 2013",
+	  	  		url : "http://www.sbcc.edu/"
 	  	  	}
 	  	],
 
-	  	"onlineCourses" : [
+	  	onlineCourses : [
 	  		{
-	  			"title" : "Front-End Web Developer",
-	  			"school" : "Udacity",
-	  			"dates" : "Nov 2015 - ",
-	  			"url" : "https://www.udacity.com/"
+	  			title : "Front-End Web Developer",
+	  			school : "Udacity",
+	  			date : "Nov 2015 - ",
+	  			url : "https://www.udacity.com/"
 	  		}
 	  	],
 
-	  	"display" : function(){
+	  	display : function(){
 	  		$("#education").append(HTMLschoolStart);
 
 	  		for (school in education.schools){
@@ -84,7 +84,7 @@
 	  			$("#education").append(formattedDates);
 	  			var formattedLocation = HTMLschoolLocation.replace("%data%", education.schools[school].location);
 	  			$("#education").append(formattedLocation);
-	  			var formattedMajor = HTMLschoolMajor.replace("%data%", education.schools[school].major);
+	  			var formattedMajor = HTMLschoolMajor.replace("%data%", education.schools[school].majors[0]);
 	  			$("#education").append(formattedMajor);
 	  		}
 
@@ -95,7 +95,7 @@
 	  			$("#education").append(formattedTitle);
 	  			var formattedSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[course].school);
 	  			$("#education").append(formattedSchool);
-	  			var formattedDates = HTMLonlineDates.replace("%data%", education.onlineCourses[course].dates);
+	  			var formattedDates = HTMLonlineDates.replace("%data%", education.onlineCourses[course].date);
 	  			$("#education").append(formattedDates);
 	  			var formattedURL = HTMLonlineURL.replace("%data%", education.onlineCourses[course].url);
 	  			$("#education").append(formattedURL);
@@ -107,17 +107,17 @@
 
 
   	var work = {
-  		"jobs" : {
-  			"Chess" : {
-  				"employer" : "Chess Society of Randomness",
-  				"title" : "Quantum Chess Player",
-  				"location" : "Concord, CA",
-  				"dates" : "January 2016 - ",
-  				"description" : "Description goes here"
+  		jobs : [
+  			{
+  				employer : "Chess Society of Randomness",
+  				title : "Quantum Chess Player",
+  				location : "Concord, CA",
+  				dates : "January 2016 - ",
+  				description : "Description goes here"
   			}
-  		},
+  		],
 
-  		"display" : function(){
+  		display : function(){
   			$("#workExperience").append(HTMLworkStart);
   			for(job in work.jobs){
 	  			var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
@@ -165,19 +165,19 @@
 
 
   	var projects = {
-  		"projects": [
+  		projects: [
   			{
-  				"title" : "Portfolio",
-  				"dates" : "Nov. 2015",
-  				"description" : "See my Portfolio page of all my work!",
-  				"images" : "imageurl"
+  				title : "Portfolio",
+  				dates : "Nov. 2015",
+  				description : "See my Portfolio page of all my work!",
+  				images : ["imageurl"]
   			},
 
   			{
-  				"title" : "Frogger Game!",
-  				"dates" : "Mar. 2016",
-  				"description" : "See my frogger clone!",
-  				"images" : "imageurl"
+  				title : "Frogger Game!",
+  				dates : "Mar. 2016",
+  				description : "See my frogger clone!",
+  				images : ["imageurl"]
   			}
   		]
   	};
