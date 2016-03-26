@@ -170,14 +170,14 @@
   				title : "Portfolio",
   				dates : "Nov. 2015",
   				description : "See my Portfolio page of all my work!",
-  				images : ["imageurl"]
+  				images : ["images/fry.jpg"]
   			},
 
   			{
   				title : "Frogger Game!",
   				dates : "Mar. 2016",
   				description : "See my frogger clone!",
-  				images : ["imageurl"]
+  				images : ["images/fry.jpg"]
   			}
   		]
   	};
